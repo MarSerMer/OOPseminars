@@ -73,4 +73,27 @@ public List<Runable> getRunable(){
         }
         return fastestFlyer;
     }
+
+    public List<Swimable> getSwimable(){
+        System.out.println("Swimming animals:");
+        List<Swimable> result = new ArrayList<>();
+        for(Animal a: animals){
+            if (a instanceof Swimable) {
+                result.add((Swimable) a);
+            }
+        }
+        return result;
+    }
+
+    public Swimable getFastestSwimmer(){
+        System.out.println("This animal swims faster than others: ");
+        List<Swimable> swimmers = getSwimable();
+        Swimable fastestSwimmer = swimmers.get(0);
+        for (Swimable f : swimmers){
+            if (f.speedOfSwimming()>fastestSwimmer.speedOfSwimming()){
+                fastestSwimmer = f;
+            }
+        }
+        return fastestSwimmer;
+    }
 }

@@ -7,6 +7,11 @@ public abstract class Animal implements Sayable{
     public Animal(String animalName) {
         this.animalName = animalName;
     }
+
+    public String getAnimalName() {
+        return animalName;
+    }
+
     public abstract String feed();
     @Override
     public String toString(){
